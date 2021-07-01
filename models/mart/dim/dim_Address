@@ -1,8 +1,0 @@
-{{ config(
-materialized='table'
-) }}
-
-
-SELECT Unique_Key as recordNumber, Incident_Zip, Location_Type, Borough
-
-FROM `cis9440-final.311.311_Data`
