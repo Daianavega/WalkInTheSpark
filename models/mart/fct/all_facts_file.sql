@@ -2,7 +2,7 @@
 materialized='table'
 ) }}
 
-SELECT Unique_Key as recordNumber, Date as WeatherDate, Date(Created_Date) as Create_Date, Date(Closed_Date) as Close_Date, *,
+SELECT Unique_Key as recordNumber, Date as WeatherDate, Date(Created_Date) as Create_Date, Date(Closed_Date) as Close_Date, DATE_DIFF(closed_date, created_date, day) as Duration, *,
 case 
 when w.Month in (12,1,2) then 'Winter'
 when w.Month in (3,4,5) then 'Spring'
