@@ -16,6 +16,7 @@ complaint as (
     select * from {{ ref('dim_Complaint') }}
  
     left join weather using (Date)
+    left join {{ ref('dim_Address') }} using (recordNumber)
 ),
  
 final as (

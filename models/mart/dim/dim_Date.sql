@@ -12,4 +12,4 @@ when Month in (9,10,11) then 'Fall'
 
 end Season
 
-FROM `cis9440-final.Weather.Weather_Data`
+FROM {{ ref('weather_data')}}
